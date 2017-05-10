@@ -4,6 +4,8 @@ var app = express();
 
 var months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 
+app.set('port', (process.env.PORT || 5000));
+
 app.get('/:time', (req, res) => {
 
     console.log(req.params);
@@ -28,4 +30,4 @@ app.get('/:time', (req, res) => {
 
 });
 
-app.listen('3000');
+app.listen(app.get('port'));
