@@ -18,6 +18,8 @@ app.get('/', (req, res) => {
 app.get('/:time', (req, res) => {
 
     var time = parseInt(req.params.time * 1000, 10);
+    if (isNaN(time)) time = req.params.time;
+
     var date = new Date(time);
 
     var natural;
