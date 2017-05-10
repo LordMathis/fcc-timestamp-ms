@@ -1,9 +1,13 @@
 var express = require('express');
 
-var app = express();
-
 var months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 
+
+var app = express();
+
+app.set('views', path.join(__dirname, '/views'));
+app.engine('md', require('marked-engine').renderFile);
+app.set('view engine', 'md');
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/:time', (req, res) => {
