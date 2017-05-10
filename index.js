@@ -1,4 +1,5 @@
 var express = require('express');
+var path = require('path');
 
 var months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 
@@ -10,9 +11,11 @@ app.engine('md', require('marked-engine').renderFile);
 app.set('view engine', 'md');
 app.set('port', (process.env.PORT || 5000));
 
-app.get('/:time', (req, res) => {
+app.get('/', (req, res) => {
+    res.render('index');
+});
 
-    console.log(req.params);
+app.get('/:time', (req, res) => {
 
     var time = parseInt(req.params.time * 1000, 10);
     var date = new Date(time);
