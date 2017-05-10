@@ -30,4 +30,6 @@ app.get('/:time', (req, res) => {
 
 });
 
-app.listen(app.get('port'));
+app.listen(app.get('port'), () => {
+  console.log('Node app is running on port', app.get('port'));
+});
