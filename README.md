@@ -2,7 +2,7 @@
 
 ### Live demo:
 
-fcctimestampapp.herokuapp.com
+https://fcctimestampapp.herokuapp.com
 
 ### Example usage:
 
